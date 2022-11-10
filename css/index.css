@@ -1,0 +1,19 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+    box-sizing: border-box;   
+}
+header{
+    background-image: linear-gradient(to bottom, rgb(0, 0, 0), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+    overflow-y: hidden;
+}
+.nav-link{
+    color: white;
+    font-size: 1rem;
+}
+.linkfooter{
+    font-size: 2.5rem;
+    text-decoration: none;
+    color: white;
+}
