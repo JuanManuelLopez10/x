@@ -1,8 +1,4 @@
 let galerias = []
-const main = document.getElementById('main')
-main.innerHTML=`
-<img src="./assets/logo.png" class="col-10 animate__animated animate__backInDown">
-`
 document.addEventListener('DOMContentLoaded', async () => {
     await new Promise((resolve, reject) => setTimeout(resolve, 3000));
     
