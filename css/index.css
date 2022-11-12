@@ -13,10 +13,93 @@ header{
     font-size: 1rem;
 }
 .linkfooter{
-    font-size: 2.5rem;
+    font-size: 1.2rem;
     text-decoration: none;
     color: white;
 }
+.noseve1{
+    text-shadow: 3px 3px 8px black;
+    text-decoration: double;
+    font-size: 2.5rem;
+    overflow-y: hidden;
+}
+.noseve2{
+    text-shadow: 2px 1px 5px black;
+    font-size: 1.2rem;
+}
 .imagenprincipal{
     height: 100vh;
+}
+.opciongaleria{
+    color: white;
+    text-decoration: none;
+}
+.nombreopcion{
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    position: relative;
+    bottom: 45%;
+    text-shadow: 2px 1px 5px black;
+    overflow-y: hidden;
+}
+.opciongaleria:hover{
+    animation: shakeit 1s infinite;
+}
+@keyframes shakeit {
+    0%{transform: skewX(3deg);}
+    50%{transform: skewX(-3deg);}
+    100%{transform:skewX(3deg)}
+}
+.pre{
+    overflow-y: scroll;
+    animation: mymove 3s;
+    opacity: 0;
+    position: fixed;
+}
+.imagenport{
+    border-radius: 20px;
+    border: 2px solid grey;
+}
+.main{
+    margin-top: 12%;
+}
+#infodehistoria{
+    margin-top: 10vh;
+    margin-bottom: 10%;
+    background-color: rgb(250, 240, 240, 0.7);
+    padding: 5%;
+    border-radius: 20px;
+}
+#infodehistoria h3{
+    font-size: 2rem;
+}
+#infodehistoria p{
+    font-size: 1.3rem;
+}
+.h100{
+    height: 100vh;
+}
+@keyframes mymove {
+    0%{overflow-y: scroll;
+        width: 100vw;
+        height: 100vh;
+        z-index: 1;
+        opacity: 1;}
+    50%{overflow-y: scroll;
+        width: 100vw;
+        height: 100vh;
+        z-index: 1;
+        opacity: 1;}
+    100%{overflow-y: scroll;
+        width: 100vw;
+        height: 100vh;
+        z-index: 1;
+        opacity: 0;}
+  }
+@media screen and (orientation:landscape) {
+    .imagenprincipal{
+        width: 100%;
+        height: auto;
+    }
 }

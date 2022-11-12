@@ -1,11 +1,21 @@
 [
     {
-        "nombre":"Kite-Surf"
+        "nombre":"Kite-Surf",
+        "extra":"Volemos juntos"
+
     },
     {
-        "nombre":"Futbol"
+        "nombre":"Body",
+        "extra":"Algo..."
     },
     {
-        "nombre":"Body"
+        "nombre":"Futbol",
+        "extra":"Garra charrua"
+
+    },
+    {
+        "nombre":"Motocross",
+        "extra":""
     }
+
 ]

@@ -1,7 +1,14 @@
 let galerias = []
+const main = document.getElementById('main')
+main.innerHTML=`
+<section class="bg-black d-flex pre align-items-center justify-content-around col-12" id="pre">
+<img src="./assets/logo.png" class="animate__animated animate__zoomIn col-5 col-lg-2">
+</section>
+`
 document.addEventListener('DOMContentLoaded', async () => {
-    await new Promise((resolve, reject) => setTimeout(resolve, 3000));
-    
+    await new Promise((resolve, reject) => setTimeout(resolve, 1000));
+    const pre = document.getElementById('pre')
+
     const respuesta = await fetch('./json/galerias.json')
     galerias = await respuesta.json()
     console.log(galerias);
@@ -9,16 +16,19 @@ document.addEventListener('DOMContentLoaded', async () => {
     const header = document.getElementById('header')
     header.innerHTML=`
     <nav class="nav col-12 d-flex justify-content-around align-items-center">
-    <a href="./index.html" class="col-3" ><img src="./assets/logo.png" class="col-8" alt=""></a>
-    <a class="nav-link col-3" aria-current="page" href="./historia.html">Historia</a>
-    <a class="nav-link col-3" href="./portfolio.html">Portfolio</a>
-    <a class="nav-link col-3" href="#">Tips</a>
+    <a href="./index.html" class="col-3 animate__animated animate__fadeInDown" ><img src="./assets/logo.png" class="col-8" alt=""></a>
+    <a class="nav-link col-3 animate__animated animate__fadeInDown" aria-current="page" href="./historia.html">Historia</a>
+    <a class="nav-link col-3 animate__animated animate__fadeInDown" href="./portfolio.html">Portfolio</a>
+    <a class="nav-link col-3 animate__animated animate__fadeInDown" href="#">Tips</a>
     </nav>
     `
 
     const main = document.getElementById('main')
-    main.innerHTML= `
-    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+    const carouselexample = document.createElement('div')
+    carouselexample.setAttribute('id','carouselExampleCaptions')
+    carouselexample.setAttribute('class','carousel slide')
+    carouselexample.setAttribute('data-bs-ride','false')
+    carouselexample.innerHTML= `
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -34,8 +44,8 @@ document.addEventListener('DOMContentLoaded', async () => {
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
     </button>
-  </div>
     `
+    main.appendChild(carouselexample)
     const carouselinner = document.getElementById('carousel-inner')
     galerias.forEach(element => {
         const carouselitem = document.createElement('div')
@@ -44,9 +54,9 @@ document.addEventListener('DOMContentLoaded', async () => {
             <source media="(orientation: portrait)" srcset="./assets/galerias/${element.nombre}/vertical-1.png">
             <img class="imagenprincipal" src="./assets/galerias/${element.nombre}/horizontal-1.png" alt="">
         </picture>
-        <div class="carousel-caption d-none d-md-block">
-            <h5>First slide label</h5>
-            <p>Some representative placeholder content for the first slide.</p>
+        <div class="carousel-caption d-md-block">
+            <h5 class="noseve1 animate__animated animate__fadeInUp">${element.nombre}</h5>
+            <p class="noseve2 animate__animated animate__fadeInUp">${element.extra}</p>
         </div>
         `
         if (galerias.indexOf(element)===0) {
